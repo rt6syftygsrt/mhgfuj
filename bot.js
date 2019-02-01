@@ -146,27 +146,28 @@ if (message.content.startsWith("$رول")) {
 
 
 
-
- Codescopyright arrow_down
-
 client.on("message", message => {
-    const prefix = "$"
-              
-          if(!message.channel.guild) return;
-   if(message.author.bot) return;
-      if(message.content === "image"){ 
-          const embed = new Discord.RichEmbed()
-  
-      .setTitle(`هذا هو شعار سيرفر ** ${message.guild.name} **`)
-  .setAuthor(message.author.username, message.guild.iconrURL)
-    .setColor("PURPLE")
-    .setImage(message.guild.iconURL)
-    .setURL(message.guild.iconrURL)
-                    .setTimestamp()
+    var prefix = "$"; // غير هنا حط البرفكس
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "مسح")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل بنجاح",
+        footer: {
+          text: "F5AmEh.bot" // غير هنا حط اسم البوت
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
 
-   message.channel.send({embed});
-      }
-  });
+     
+});
 
 
 

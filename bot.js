@@ -172,7 +172,6 @@ client.on("message", message => {
 
 
 
-
 // Voice Logs
 client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
@@ -217,7 +216,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
             .setTitle('**[VOICE DEAFEN]**')
             .setThumbnail('https://images-ext-1.discordapp.net/external/7ENt2ldbD-3L3wRoDBhKHb9FfImkjFxYR6DbLYRjhjA/https/cdn.pg.sa/auWd5b95AV.png')
             .setColor('RED')
-            .setDescription(`**User:** <@${voiceOld.user.id}> (ID: ${voiceOld.user.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`)
+            .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}>\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`)
             .setTimestamp()
             .setFooter(userTag, userAvatar)
  
@@ -273,8 +272,6 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         logChannel.send(voiceLeave);
     }
 });
-
-
 
 
 

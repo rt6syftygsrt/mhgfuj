@@ -163,7 +163,7 @@ client.on("message", message => {
         footer: {
           text: "F5AmEh.bot" // غير هنا حط اسم البوت
         }
-      }}).then(msg => {msg.delete(3000)});
+      }}).then(msg => {msg.delete(30000)});
                           }
 
      

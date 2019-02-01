@@ -124,24 +124,35 @@ client.on('message', message => {
     });
 
 
+const invites = {};
 
-client.on("message", message => {
-              var args = message.content.substring(prefix.length).split("$");
-              if (message.content.startsWith(prefix + "مسح")) {
-                  if(!message.channel.guild) return message.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');         
-     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
-          var msg;
-          msg = parseInt();
-        
-        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-        message.channel.sendMessage("", {embed: {
-          title: "``تــم مسح الشات ``",
-          color: 0x06DF00,
-          footer: {
-            
-          }
-        }}).then(msg => {msg.delete(3000)});
-                            }
-  
-       
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
   });
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logChannel = member.guild.channels.find(channel => channel.name === "smg");
+    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
+  });
+});
+
+
+
+
+
+
+
+

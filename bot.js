@@ -192,7 +192,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
             .setTitle('**[VOICE MUTE]**')
             .setThumbnail('https://images-ext-1.discordapp.net/external/pWQaw076OHwVIFZyeFoLXvweo0T_fDz6U5C9RBlw_fQ/https/cdn.pg.sa/UosmjqDNgS.png')
             .setColor('RED')
-            .setDescription(`**User:** <@${voiceOld.user.id}> (ID: ${voiceOld.user.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`)
+            .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}> \n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\``)
             .setTimestamp()
             .setFooter(userTag, userAvatar)
  
@@ -216,7 +216,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
             .setTitle('**[VOICE DEAFEN]**')
             .setThumbnail('https://images-ext-1.discordapp.net/external/7ENt2ldbD-3L3wRoDBhKHb9FfImkjFxYR6DbLYRjhjA/https/cdn.pg.sa/auWd5b95AV.png')
             .setColor('RED')
-            .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}>\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`)
+            .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}>\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\``)
             .setTimestamp()
             .setFooter(userTag, userAvatar)
  
@@ -228,7 +228,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
             .setTitle('**[VOICE UNDEAFEN]**')
             .setThumbnail('https://images-ext-2.discordapp.net/external/s_abcfAlNdxl3uYVXnA2evSKBTpU6Ou3oimkejx3fiQ/https/cdn.pg.sa/i7fC8qnbRF.png')
             .setColor('GREEN')
-            .setDescription(`**User:** <@${voiceOld.user.id}> (ID: ${voiceOld.user.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`)
+            .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}> \n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` `)
             .setTimestamp()
             .setFooter(userTag, userAvatar)
  
@@ -241,7 +241,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         .setTitle('**[JOIN VOICE ROOM]**')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
-        .setDescription(`**\n**:arrow_lower_right: Successfully \`\`JOIN\`\` To Voice Channel.\n\n**Channel:** \`\`${voiceNew.voiceChannel.name}\`\` (ID: ${voiceNew.voiceChannelID})\n**User:** ${voiceOld} (ID: ${voiceOld.id})`)
+        .setDescription(`**\n**:arrow_lower_right: Successfully \`\`JOIN\`\` To Voice Channel.\n\n**Channel:** \`\`${voiceNew.voiceChannel.name}\`\` \n**User:** ${voiceOld} `)
         .setTimestamp()
         .setFooter(voiceOld.user.tag, voiceOld.user.avatarURL)
  
@@ -253,7 +253,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         .setTitle('**[LEAVE VOICE ROOM]**')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
-        .setDescription(`**\n**:arrow_upper_left: Successfully \`\`LEAVE\`\` From Voice Channel.\n\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannelID})\n**User:** ${voiceOld} (ID: ${voiceOld.id})`)
+        .setDescription(`**\n**:arrow_upper_left: Successfully \`\`LEAVE\`\` From Voice Channel.\n\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\`\n**User:** ${voiceOld} `)
         .setTimestamp()
         .setFooter(voiceOld.user.tag, voiceOld.user.avatarURL)
  
@@ -265,7 +265,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         .setTitle('**[CHANGED VOICE ROOM]**')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
-        .setDescription(`**\n**:repeat: Successfully \`\`CHANGED\`\` The Voice Channel.\n\n**From:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannelID})\n**To:** \`\`${voiceNew.voiceChannel.name}\`\` (ID: ${voiceNew.voiceChannelID})\n**User:** ${voiceOld} (ID: ${voiceOld.id})`)
+        .setDescription(`**\n**:repeat: Successfully \`\`CHANGED\`\` The Voice Channel.\n\n**From:** \`\`${voiceOld.voiceChannel.name}\`\` \n**To:** \`\`${voiceNew.voiceChannel.name}\`\` \n**User:** ${voiceOld}`)
         .setTimestamp()
         .setFooter(voiceOld.user.tag, voiceOld.user.avatarURL)
  

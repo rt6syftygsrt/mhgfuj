@@ -169,23 +169,16 @@ client.on("message", message => {
      
 });
 
-
-client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","SMG"));
-    });
-
-
-
-client.on('guildMemberAdd', member => {
-
-    const channel = member.guild.channels.find('name', '・smg');
-  
-    const millis = new Date().getTime() - member.user.createdAt.getTime();
-    const now = new Date();
-    const createdAt = millis / 1000 / 60 / 60 / 24;
-
-
-
+client.on('message', message => {
+    if(message.content.toLowerCase().startsWith(`discord.gg`)){
+        message.member.addRole(message.guild.roles.find('name', 'Muted'));
+        var embed = new Discord.RichEmbed()
+        .setDescription(`تمت معاقبتك لنشرك سيرفر اخر هنا`)
+            message.delete();
+        message.channel.send(`<@${message.author.id}`);
+        message.channel.send({embed});
+    }
+});
 
   
     const embed = new Discord.RichEmbed()

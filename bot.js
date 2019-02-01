@@ -248,7 +248,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         logChannel.send(voiceJoin);
     }
 // Leave Voice Channel
-    if(voiceOld.voiceChannelID !== voiceNew.voiceChannelID && !voiceNew.voiceChannel) {
+    if(voiceOld.voiceChannelID !== <@${voiceOld.user.id}.voiceChannelID && !voiceNew.voiceChannel) {
         let voiceLeave = new Discord.RichEmbed()
         .setTitle('خرج من روم')
         .setColor('GREEN')

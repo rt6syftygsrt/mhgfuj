@@ -204,7 +204,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
             .setTitle('**[VOICE UNMUTE]**')
             .setThumbnail('https://images-ext-1.discordapp.net/external/u2JNOTOc1IVJGEb1uCKRdQHXIj5-r8aHa3tSap6SjqM/https/cdn.pg.sa/Iy4t8H4T7n.png')
             .setColor('GREEN')
-            .setDescription(`**User:** <@${voiceOld.user.id}> (ID: ${voiceOld.user.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`)
+            .setDescription(`**User:** <@${voiceOld.user.id}>\n**By:** <@${userID}> \n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` `)
             .setTimestamp()
             .setFooter(userTag, userAvatar)
  
@@ -213,7 +213,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 // Server Deafen Voice
         if(voiceOld.serverDeaf === false && voiceNew.serverDeaf === true) {
             let serverDeafv = new Discord.RichEmbed()
-            .setTitle('**[VOICE DEAFEN]**')
+            .setTitle('**[تم عطاء سماعة]**')
             .setThumbnail('https://images-ext-1.discordapp.net/external/7ENt2ldbD-3L3wRoDBhKHb9FfImkjFxYR6DbLYRjhjA/https/cdn.pg.sa/auWd5b95AV.png')
             .setColor('RED')
             .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}>\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\``)
@@ -225,7 +225,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 // Server UnDeafen Voice
         if(voiceOld.serverDeaf === true && voiceNew.serverDeaf === false) {
             let serverUndeafv = new Discord.RichEmbed()
-            .setTitle('**[VOICE UNDEAFEN]**')
+            .setTitle('**[تم فك ميوت سماعة]**')
             .setThumbnail('https://images-ext-2.discordapp.net/external/s_abcfAlNdxl3uYVXnA2evSKBTpU6Ou3oimkejx3fiQ/https/cdn.pg.sa/i7fC8qnbRF.png')
             .setColor('GREEN')
             .setDescription(`**User:** <@${voiceOld.user.id}> \n**By:** <@${userID}> \n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` `)
@@ -238,7 +238,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 // Join Voice Channel
     if(voiceOld.voiceChannelID !== voiceNew.voiceChannelID && !voiceOld.voiceChannel) {
         let voiceJoin = new Discord.RichEmbed()
-        .setTitle('**[JOIN VOICE ROOM]**')
+        .setTitle('**[لقد دخل عضو الروم صوتي]**')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
         .setDescription(`**\n**:arrow_lower_right: Successfully \`\`JOIN\`\` To Voice Channel.\n\n**Channel:** \`\`${voiceNew.voiceChannel.name}\`\` \n**User:** ${voiceOld} `)
@@ -250,7 +250,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 // Leave Voice Channel
     if(voiceOld.voiceChannelID !== voiceNew.voiceChannelID && !voiceNew.voiceChannel) {
         let voiceLeave = new Discord.RichEmbed()
-        .setTitle('**[LEAVE VOICE ROOM]**')
+        .setTitle('**[لقدخرجا عضو من روم صوتي]**')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
         .setDescription(`**\n**:arrow_upper_left: Successfully \`\`LEAVE\`\` From Voice Channel.\n\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\`\n**User:** ${voiceOld} `)

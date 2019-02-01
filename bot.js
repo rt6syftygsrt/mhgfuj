@@ -241,7 +241,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         .setTitle('دخل الاروم')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
-        .setDescription(`**\n**:arrow_lower_right: Successfully \`\`JOIN\`\` To Voice Channel.\n\n**Channel:** \`\`${voiceNew.voiceChannel.name}\`\` \n**User:** ${voiceOld} `)
+        .setDescription(`**\n**:arrow_lower_right: Successfully \`\`JOIN\`\` To Voice Channel.\n\n**Channel:** \`🔊\`${voiceNew.voiceChannel.name}\`\` \n**User:** ${voiceOld} `)
         .setTimestamp()
         .setFooter(voiceOld.user.tag, voiceOld.user.avatarURL)
  
@@ -253,7 +253,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         .setTitle('خرج من روم')
         .setColor('GREEN')
         .setThumbnail(voiceOld.user.avatarURL)
-        .setDescription(`**\n**:arrow_upper_left: Successfully \`\`LEAVE\`\` From Voice Channel.\n\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\`\n**User:** ${voiceOld} `)
+        .setDescription(`**\n**:arrow_upper_left: Successfully \`\`LEAVE\`\` From Voice Channel.\n\n**Channel:** \`🔊\`${voiceOld.voiceChannel.name}\`🔊\`\n**User:** ${voiceOld} `)
         .setTimestamp()
         .setFooter(voiceOld.user.tag, voiceOld.user.avatarURL)
  
